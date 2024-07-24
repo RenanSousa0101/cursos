@@ -1,0 +1,15 @@
+h1{
+    font-size: 50px;
+    color:purple;
+    border: 2px dashed orange;
+    
+}
+li{
+    color:green;
+    background-color:pink;
+}
+body{
+    background-image: url('https://t2.tudocdn.net/601886?w=1920&h=1080');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
