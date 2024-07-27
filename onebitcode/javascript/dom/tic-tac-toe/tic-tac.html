@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="tic-tac.css">
+    <script src="tic-tac.js" defer></script>
+</head>
+<body>
+    <div class="players">
+        <div class="player">
+            <label for="jogador1">Jogador 1:</label>
+            <input id="jogador1" name="jogador1" type="text" value="">
+        </div>
+        <div class="player">
+            <label for="jogador2">Jogador 2:</label>
+            <input id="jogador2" name="jogador2" type="text" value="">
+        </div>
+    </div>
+    <div class="placar">
+        <div class="container">
+            <div class = "nomeJogador">
+                <div class="flex">
+                    <h2 id="jogador1Nome"></h2>
+                    <h2 id="jogador2Nome"></h2>
+                </div>
+                <div class="flex2">
+                    <h3 id="jogador1Vez" class="X"></h3>
+                    <h3 id="jogador2Vez" class="O"></h3>
+                </div>
+            </div>
+            
+                <h2 id="contador"></h2>
+        </div>
+    </div>
+    <div class="bottons">
+        <button id="limpar">Limpar</button>
+        <button id="resetar">Resetar Placar</button>
+    </div>
+    <div class="tic-tac-toe">
+        <div class="column">
+            <button id="house1"></button>
+            <button id="house4"></button>
+            <button id="house7"></button>
+        </div>
+        <div id="vertical" class="column">
+            <button id="house2"></button>
+            <button id="house5"></button>
+            <button id="house8"></button>
+        </div>
+        <div class="column">
+            <button id="house3"></button>
+            <button id="house6"></button>
+            <button id="house9"></button>
+        </div>
+    </div>
+    <div class="victory">
+        <h1 id="euVenci"></h1>
+    </div>
+</body>
+</html>

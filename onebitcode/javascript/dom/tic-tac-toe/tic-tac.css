@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    background: linear-gradient(45deg,  #040C0E,#132226,#525B56);
+    color: #A49783;
+
+   
+
+}
+
+:root{
+    --vencedor-cor: linear-gradient(45deg, #040C0E, transparent);
+}
+
+.vencedor{
+    background: var(--vencedor-cor) !important;
+}
+
+body .players{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+body .players .player{
+    display: flex;
+    flex-direction: column;
+}
+
+body .players .player input{
+    z-index: 1;
+}
+
+body .placar{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 85%;
+    justify-content: center;
+}
+
+body .placar .container{
+    display: flex;
+    background: linear-gradient(45deg,  #040C0E,#132226,#525B56);
+    position: fixed;
+    width: 60%;
+    height: 80px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+
+body .placar .container .nomeJogador{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    flex-direction: row;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+
+.flex2{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin: 40px;
+    flex-direction: row;
+    align-items: center;
+    font-size: 60px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: -8px 5px 6px black;
+    font-style: normal;
+}
+
+
+
+body .tic-tac-toe{
+    display: flex;
+    width: 100%;
+    height: 80%;
+    
+    justify-content: center;
+    align-items: center;
+    
+}
+
+body .tic-tac-toe .column{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+body .tic-tac-toe .column button{
+    width: 200px;
+    height: 120px;
+    background-color: transparent;
+    border: none;
+    z-index: 1;
+    
+}
+
+body .bottons{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    align-items: baseline;
+    justify-content: center;
+    flex-direction: row;
+    
+}
+
+body .bottons button{
+    margin-top: 60px;
+    margin-left: 10px;
+    justify-content: space-between;
+}
+
+body .tic-tac-toe .column button:nth-child(2){
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+}
+
+#vertical{
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+}
+
+#contador{
+    position: fixed;
+    background: linear-gradient(45deg,  #040C0E,#132226, #525B56);
+    padding: 9px;
+    font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+body .victory{
+    width: 100%;
+    position: fixed;
+}
+
+body .victory h1{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+
+.column h1{
+    font-size: 100px;
+}
+
+.X{
+    color: #BE9063;
+}
+.O{
+    color: #A4978E;
+}

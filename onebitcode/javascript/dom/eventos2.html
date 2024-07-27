@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trabalhando com Eventos</title>
+  // defer faz com que a página js seja carregada depois que todo o html for carregado
+  // serve para evitar erros de carregamento de valores nulos no js
+  //agora precisa do defer, pois estamos chamando os eventos no js e não mais diretamente no html
+  <script src="eventos2.js" defer></script>
+</head>
+<body>
+  <h1>Trabalhando com Eventos no Javascript</h1>
+  <hr>
+
+  <h2>Registre-se!</h2>
+  <section>
+    <label for="username">Nome de Usuário:</label>
+    <input type="text" name="username" id="username">
+    <br>
+    <label for="password">Senha:</label>
+    <input type="password" name="password" id="password">
+    <br>
+    <label for="passwordConfirmation">Confirme sua senha:</label>
+    <input type="password" name="passwordConfirmation" id="passwordConfirmation">
+    <br>
+    //nesse botão será criado um evento de click, na página js
+    <button id="register-button">Registrar</button>
+    //esse onclick foi colocado de exemplo diretamente, mas para ser usado pela função removeEvent na página js, ele vai remover 
+    // o evento de click criado na pagina js.
+    <button onclick="removeEvent()">Remover Event Listener</button>
+  </section>
+</body>
+</html>
