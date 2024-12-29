@@ -1,0 +1,2 @@
+Olá Mundo!
+Vamos começar a aprender sobre o NodeJs.
