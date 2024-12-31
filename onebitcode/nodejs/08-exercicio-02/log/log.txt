@@ -1,0 +1,68 @@
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:23 | Uso de Memória RAM: 1.26 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:24 | Uso de Memória RAM: 1.26 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:25 | Uso de Memória RAM: 1.26 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:26 | Uso de Memória RAM: 1.26 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:27 | Uso de Memória RAM: 1.26 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:28 | Uso de Memória RAM: 1.26 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:29 | Uso de Memória RAM: 1.26 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:30 | Uso de Memória RAM: 1.26 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:31 | Uso de Memória RAM: 1.26 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:32 | Uso de Memória RAM: 1.26 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:33 | Uso de Memória RAM: 1.26 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:34 | Uso de Memória RAM: 1.26 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:35 | Uso de Memória RAM: 1.26 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:36 | Uso de Memória RAM: 1.25 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:37 | Uso de Memória RAM: 1.25 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:38 | Uso de Memória RAM: 1.25 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:39 | Uso de Memória RAM: 1.25 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:40 | Uso de Memória RAM: 1.25 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:41 | Uso de Memória RAM: 1.25 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:42 | Uso de Memória RAM: 1.26 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:43 | Uso de Memória RAM: 1.26 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:44 | Uso de Memória RAM: 1.26 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:45 | Uso de Memória RAM: 1.26 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:46 | Uso de Memória RAM: 1.26 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:47 | Uso de Memória RAM: 1.25 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:48 | Uso de Memória RAM: 1.25 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:49 | Uso de Memória RAM: 1.25 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:50 | Uso de Memória RAM: 1.25 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:51 | Uso de Memória RAM: 1.25 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:52 | Uso de Memória RAM: 1.25 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:53 | Uso de Memória RAM: 1.25 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:54 | Uso de Memória RAM: 1.25 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:55 | Uso de Memória RAM: 1.25 GB / 7.22 GB (17 %)
+---
+DETALHES DO SISTEMA | Sistema Operacional: Linux | Arquitetura: x64 | Modelo do Processador: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx | Tempo de Atividade do Sistema: 0:6:0:56 | Uso de Memória RAM: 1.25 GB / 7.22 GB (17 %)
+---
