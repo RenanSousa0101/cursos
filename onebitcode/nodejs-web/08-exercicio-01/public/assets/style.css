@@ -9,7 +9,7 @@ body{
     height: 100vh;
 }
 
-body section{
+body .index{
     display: flex;
     width: auto;
     height: 100%;
@@ -17,7 +17,7 @@ body section{
     align-items: center;
 }
 
-body section div{
+body .index div{
     display: flex;
     width: 480px;
     flex-direction: column;
@@ -25,10 +25,10 @@ body section div{
     gap: 20px;
 }
 
-div p{
+.index div p{
     text-align: center;
 }
 
-div button{
+.index div button{
     cursor: pointer;
 }

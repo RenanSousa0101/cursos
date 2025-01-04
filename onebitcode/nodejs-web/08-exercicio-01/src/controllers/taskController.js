@@ -3,6 +3,10 @@ const taskController = {
     index: (req, res) => {
         res.render('index');
     },
+
+    listTask: (req, res) => {
+        res.render('listTask');
+    }
 }
 
 module.exports = taskController;
