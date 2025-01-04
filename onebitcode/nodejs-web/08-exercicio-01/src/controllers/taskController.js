@@ -17,6 +17,12 @@ const taskController = {
         const newTask = taskModel.createListTask(titleTask);
         taskModel.saveListTask(newTask);
         res.redirect('/listTask');
+    },
+
+    delete: (req, res) => {
+        const id = req.params.id;
+        taskModel.deleteListTask(id);
+        res.redirect('/listTask');
     }
 }
 

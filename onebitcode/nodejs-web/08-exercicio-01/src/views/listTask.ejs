@@ -15,11 +15,14 @@
     </form>
     <section>
         <% tasks.forEach(task => {%>
-            <div>
-                <h1><%= task.title%></h1>
-                <button>Visualizar</button>
-                <button>Excluir</button>
-            </div>
+            
+                <div>
+                    <h1><%= task.title%></h1>
+                    <button>Visualizar</button>
+                    <form action="/listTask/delete/<%= task.id %>" method="post">
+                        <button type="submit">Excluir</button>
+                    </form>
+                </div>
         <% }) %>
     </section>
 </body>
