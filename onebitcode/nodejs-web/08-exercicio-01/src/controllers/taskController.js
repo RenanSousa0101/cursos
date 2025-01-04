@@ -1,3 +1,5 @@
+const taskModel = require("../models/taskModel");
+
 const taskController = {
     //redenrizando a página de index;
     index: (req, res) => {
@@ -5,7 +7,16 @@ const taskController = {
     },
 
     listTask: (req, res) => {
-        res.render('listTask');
+        const tasks = taskModel.getAllTasks();
+
+        res.render('listTask', {tasks});
+    },
+
+    save: (req, res) => {
+        const {titleTask} = req.body;
+        const newTask = taskModel.createListTask(titleTask);
+        taskModel.saveListTask(newTask);
+        res.redirect('/listTask');
     }
 }
 

@@ -1,6 +1,9 @@
-let ListTasks = [];
+let listTasks = [];
 
 const taskModel = {
+    getAllTasks() {
+        return listTasks;
+    },
     //Criando tarafa;
     createListTask(title){
         const ListTask = {
@@ -12,18 +15,20 @@ const taskModel = {
                 this.tasks.push({id: Date.now().toString(), name: name, check: false});
             }
         }
-        return task;
+        return ListTask;
     },
     //Salvando Tarefa
     saveListTask(task){
-        ListTasks.unshift(task);
+        listTasks.unshift(task);
     },
     //atualizando tarefa
     updateListTask(id){
-        const index = ListTasks.findIndex(task => ListTasks.id === id);
+        const index = listTasks.findIndex(task => listTasks.id === id);
     },
     //Deletando Tarefa
     deleteListTask(id){
-        ListTasks = ListTasks.filter(task => task.id !== id);
+        listTasks = listTasks.filter(task => task.id !== id);
     }
 }
+
+module.exports = taskModel;

@@ -6,13 +6,21 @@
     <title>Lista de Tarefas</title>
 </head>
 <body>
-    <header>
-        <label for="addTarefa">Adicionar nova tarefa:</label>
-        <input type="text" name="addTarefa">
-        <button type="submit">Adicionar</button>
-    </header>
+    <form action="/listTask/save" method="post">
+        <header>
+            <label for="titleTask">Adicionar nova tarefa:</label>
+            <input type="text" name="titleTask" id="titleTask">
+            <button type="submit">Adicionar</button>
+        </header>
+    </form>
     <section>
-        
+        <% tasks.forEach(task => {%>
+            <div>
+                <h1><%= task.title%></h1>
+                <button>Visualizar</button>
+                <button>Excluir</button>
+            </div>
+        <% }) %>
     </section>
 </body>
 </html>
