@@ -11,7 +11,7 @@ const playlistController = {
     //Mostrar apenas os dados de uma única PlayList
     showPlayList: (req, res) => {
         const {playlistId} = req.params;
-        const playList = playlistModel.getPlaylistById(playlistId);
+        const playList = playlistModel.getPlaylistById(Number(playlistId));
         res.json(playList);
     },
     // POST /playlist
@@ -44,7 +44,7 @@ const playlistController = {
 
     validationMusic(music, newPlayList, res){
         if (music.title && music.url){
-            playlistModel.createMusic(music.title, music.artist, music.album, music.year, music.url, newPlayList.id);
+            playlistModel.createMusic(music.title, music.artist, music.album, music.year, music.url, Number(newPlayList.id));
             res.status(201);
             res.json(newPlayList);
         } else {
@@ -56,7 +56,7 @@ const playlistController = {
     //Adicionar uma nova música a uma Playlist
     addMusicInList: (req, res) => {
         const {playlistId} = req.params;
-        const playList = playlistModel.getPlaylistById(playlistId);
+        const playList = playlistModel.getPlaylistById(Number(playlistId));
         const {title, artist, album, year, url} = req.body;
         const music = {title, artist, album, year, url};
         
@@ -70,7 +70,7 @@ const playlistController = {
         const newDataPlaylist = {namePlaylist, tags};
 
         if(namePlaylist || tags) {
-            const update = playlistModel.playlistUpdate(playlistId, newDataPlaylist);
+            const update = playlistModel.playlistUpdate(Number(playlistId), newDataPlaylist);
             res.status(201);
             res.json(update);
         } else {
@@ -81,7 +81,7 @@ const playlistController = {
     // Deletar uma Playlist
     deletePlaylist: (req, res) => {
         const {playlistId} = req.params;
-        const deleteList = playlistModel.deletePlaylist(playlistId);
+        const deleteList = playlistModel.deletePlaylist(Number(playlistId));
         res.json(deleteList);
     },
 
@@ -89,7 +89,7 @@ const playlistController = {
     // Deletar uma música de uma Playlist
     deleteMusic: (req, res) => {
         const {playlistId, musicId} = req.params;
-        const deleteMusic = playlistModel.deleteMusic(playlistId, musicId);
+        const deleteMusic = playlistModel.deleteMusic(Number(playlistId), Number(musicId));
         res.json(deleteMusic);
     }
 
