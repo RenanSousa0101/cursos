@@ -18,24 +18,50 @@ const playlistController = {
     //Adicionar uma nova Playlist
     createPlaylist: (req, res) => {
         const {namePlaylist, tagsPlaylist} = req.body;
-        const {title, artist, album, year, url} = req.body;
-        const music = {title, artist, album, year, url};
-        module.exports.validation(namePlaylist, 'name playlist', res);
-        module.exports.validation(tagsPlaylist, 'tags', res);
+        const {confirm} = req.body;
+        module.exports.validation(namePlaylist, 'A playlist precisa de um nome!', res);
+        module.exports.validation(tagsPlaylist, 'Você precisa informar as tags da playlist!', res);
+        
+        if(namePlaylist && tagsPlaylist) {
+            const newPlayList = playlistModel.createPlaylist(namePlaylist, tagsPlaylist);
 
-        const newPlayList = playlistModel.createPlaylist(namePlaylist, tagsPlaylist, music);
-        res.status(201);
-        res.json(newPlayList);
+            if (confirm) {
+                const {title, artist, album, year, url} = req.body;
+                const music = {title, artist, album, year, url};
+                module.exports.validationMusic(music, newPlayList, res);
+            } else {
+                res.status(201);
+                res.json(newPlayList);
+            }
+        }
     },
 
     validation (validation, nameError, res){
         if (!validation || typeof validation !== 'string') {
-            return res.status(400).json({ message: `Invalid ${nameError}!` });
+            return res.status(400).json({ message: `${nameError}!` });
         }
-    }
+    },
+
+    validationMusic(music, newPlayList, res){
+        if (music.title && music.url){
+            playlistModel.createMusic(music.title, music.artist, music.album, music.year, music.url, newPlayList.id);
+            res.status(201);
+            res.json(newPlayList);
+        } else {
+            module.exports.validation(music.title, 'A música precisa de um nome!', res);
+            module.exports.validation(music.url, 'Link da música não informado!', res);
+        }
+    },
     // POST /playlist/:playlistId/musicList
     //Adicionar uma nova música a uma Playlist
-
+    addMusicInList: (req, res) => {
+        const {playlistId} = req.params;
+        const playList = playlistModel.getPlaylistById(playlistId);
+        const {title, artist, album, year, url} = req.body;
+        const music = {title, artist, album, year, url};
+        
+        module.exports.validationMusic(music, playList, res);
+    }
     // PUT /playlist/:playlistId
     // Atualizar os dados de uma Playlist 
 

@@ -64,7 +64,7 @@ const playlistModel = {
         return array.filter(item => item !== "");
     },
     //cria uma nova Playlist
-    createPlaylist(namePlaylist, tagsPlaylist, objMusic = ""){
+    createPlaylist(namePlaylist, tagsPlaylist){
         const playList = {
             id: Math.floor(Math.random() * 999999),
             namePlaylist: namePlaylist,
@@ -76,10 +76,6 @@ const playlistModel = {
         playList.tags = this.validationArray(playList.tags);
 
         this.savePlaylist(playList);
-
-        if (objMusic !== "") {
-            this.createMusic(objMusic.title, objMusic.artist, objMusic.album, objMusic.year, objMusic.url, playList.id);
-        }
         return playList;
     },
 
@@ -94,9 +90,9 @@ const playlistModel = {
         const music = {
                 id: Math.floor(Math.random() * 999999),
                 title: musicTitle,
-                artist: artist,
-                album: album,
-                year: year,
+                artist: artist || 'Desconhecido',
+                album: album || 'Não informado!',
+                year: year || 'Não informado!',
                 url: url
         }
 
@@ -114,6 +110,11 @@ const playlistModel = {
 
         playList.musicList.push(music);
     },
+
+    // Atualizar os dados de uma Playlist
+    updatePlaylist(){
+
+    }
 }
 
 
