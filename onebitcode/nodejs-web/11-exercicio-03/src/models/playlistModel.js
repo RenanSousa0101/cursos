@@ -50,12 +50,12 @@ const playlistModel = {
     getAllPlaylists(){
         return playLists;
     },
-    //Mostrar apenas os dados de uma única PlayList
+    //Mostra apenas os dados de uma única PlayList
     getPlaylistById(id){
         const findPlayList = playLists.find(playList => playList.id === id);
         return findPlayList;
     },
-    //Separar String de tags em um array
+    //Separa String de tags em um array
     splitTags(tags){
         return tags.replace(",", " ").replace(", ", " ").split(" ");
     },
@@ -83,6 +83,12 @@ const playlistModel = {
         return playList;
     },
 
+    //Salva a Playlist no array
+    savePlaylist(playList){
+        playLists.push(playList);
+        return playList;
+    },
+
     //cria um objeto música 
     createMusic(musicTitle, artist, album, year, url, playListID){
         const music = {
@@ -105,15 +111,9 @@ const playlistModel = {
         if (!playList) {
             throw new Error(`Playlist com ID ${playListID} não encontrada.`);
         }
-        
+
         playList.musicList.push(music);
     },
-
-    //Salva a Playlist no array
-    savePlaylist(playList){
-        playLists.push(playList);
-        return playList;
-    }
 }
 
 
