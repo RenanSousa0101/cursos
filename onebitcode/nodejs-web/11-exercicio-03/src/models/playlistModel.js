@@ -85,6 +85,34 @@ const playlistModel = {
         return playList;
     },
 
+    // Atualizar os dados de uma Playlist
+    playlistUpdate(playListID, newDataPlaylist){
+        const playList = this.getPlaylistById(playListID);
+        if (playList) {
+            if (newDataPlaylist.namePlaylist){
+                playList.namePlaylist = newDataPlaylist.namePlaylist;
+            }
+            if (newDataPlaylist.tags){
+                playList.tags = this.splitTags(newDataPlaylist.tags);
+                playList.tags = this.validationArray(playList.tags);
+            }
+            return playList;
+        } else {
+            return {message: "A playlist não foi encontrada!"};
+        }
+    },
+
+    // Deletar uma Playlist
+    deletePlaylist(playListID){
+        const playList = this.getPlaylistById(playListID);
+        if (playList) {
+            playLists = playLists.filter(playList => playList.id !== playListID);
+            return playLists;
+        } else {
+            return {message: "A playlist não foi encontrada!"};
+        }
+    },
+
     //cria um objeto música 
     createMusic(musicTitle, artist, album, year, url, playListID){
         const music = {
@@ -111,9 +139,15 @@ const playlistModel = {
         playList.musicList.push(music);
     },
 
-    // Atualizar os dados de uma Playlist
-    updatePlaylist(){
-
+    // Deletar uma música de uma Playlist
+    deleteMusic(playListId, musicId) {
+        const findPlaylist = this.getPlaylistById(playListId);
+        if (findPlaylist) {
+            findPlaylist.musicList = findPlaylist.musicList.filter(music => music.id !== musicId);
+            return findPlaylist;
+        } else {
+            return {message: "A playlist não foi encontrada!"};
+        }
     }
 }
 

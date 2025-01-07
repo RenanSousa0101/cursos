@@ -61,15 +61,38 @@ const playlistController = {
         const music = {title, artist, album, year, url};
         
         module.exports.validationMusic(music, playList, res);
-    }
+    },
     // PUT /playlist/:playlistId
     // Atualizar os dados de uma Playlist 
+    updatePlaylist: (req, res) => {
+        const {playlistId} = req.params;
+        const {namePlaylist, tags} = req.body
+        const newDataPlaylist = {namePlaylist, tags};
 
+        if(namePlaylist || tags) {
+            const update = playlistModel.playlistUpdate(playlistId, newDataPlaylist);
+            res.status(201);
+            res.json(update);
+        } else {
+            module.exports.validation(undefined, 'É necessário informar pelo menos um campo!', res);
+        }
+    },
     // DELETE /playlist/:playlistId
     // Deletar uma Playlist
+    deletePlaylist: (req, res) => {
+        const {playlistId} = req.params;
+        const deleteList = playlistModel.deletePlaylist(playlistId);
+        res.json(deleteList);
+    },
 
     // DELETE /playlist/:playlistId/musicList/:musicId
     // Deletar uma música de uma Playlist
+    deleteMusic: (req, res) => {
+        const {playlistId, musicId} = req.params;
+        const deleteMusic = playlistModel.deleteMusic(playlistId, musicId);
+        res.json(deleteMusic);
+    }
+
 }
 
 module.exports = playlistController;
