@@ -1,5 +1,5 @@
 document.getElementById('enviarPlaylist').addEventListener('submit', function (event) {
-    event.preventDefault();  // Evita o envio do formulário e a recarga da página
+ // Evita o envio do formulário e a recarga da página
     alert('hello')
     const tagsPlaylist = document.getElementById('tagsPlaylist').value;
     const namePlaylist = document.getElementById('namePlaylist').value;
