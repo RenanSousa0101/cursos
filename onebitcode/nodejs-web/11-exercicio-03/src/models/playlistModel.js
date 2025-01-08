@@ -10,8 +10,10 @@ function storesData (){
 }
 
 function readData () {
-    fs.readFile('dataBase/data.json', "utf-8", (error, data) => {
-        playLists = JSON.parse(data);
+    fs.readFileSync('dataBase/data.json', "utf-8", (error, data) => {
+        if (data){
+            playLists.push(JSON.parse(data));
+        }
     })
 }
 

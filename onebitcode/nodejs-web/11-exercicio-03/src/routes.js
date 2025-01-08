@@ -3,6 +3,7 @@ const playlistController = require('../src/controllers/playlistController');
 
 const router = express.Router();
 
+router.get('/', playlistController.pagInicial);
 router.get('/playlist', playlistController.index);
 router.get('/playlist/:playlistId', playlistController.showPlayList);
 

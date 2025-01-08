@@ -1,6 +1,10 @@
 const playlistModel = require("../models/playlistModel");
 
 const playlistController = {
+
+    pagInicial: (req, res) => {
+        res.render('playlist');
+    },
     // GET /playlist
     //Mostrar todas as Playlists 
     index: (req, res) => {
@@ -29,6 +33,7 @@ const playlistController = {
                 const {title, artist, album, year, url} = req.body;
                 const music = {title, artist, album, year, url};
                 module.exports.validationMusic(music, newPlayList, res);
+                return;
             } else {
                 res.status(201);
                 res.json(newPlayList);
@@ -50,6 +55,7 @@ const playlistController = {
         } else {
             module.exports.validation(music.title, 'A música precisa de um nome!', res);
             module.exports.validation(music.url, 'Link da música não informado!', res);
+            return;
         }
     },
     // POST /playlist/:playlistId/musicList
@@ -61,6 +67,7 @@ const playlistController = {
         const music = {title, artist, album, year, url};
         
         module.exports.validationMusic(music, playList, res);
+        return;
     },
     // PUT /playlist/:playlistId
     // Atualizar os dados de uma Playlist 
@@ -83,6 +90,7 @@ const playlistController = {
         const {playlistId} = req.params;
         const deleteList = playlistModel.deletePlaylist(Number(playlistId));
         res.json(deleteList);
+        return;
     },
 
     // DELETE /playlist/:playlistId/musicList/:musicId
@@ -91,6 +99,7 @@ const playlistController = {
         const {playlistId, musicId} = req.params;
         const deleteMusic = playlistModel.deleteMusic(Number(playlistId), Number(musicId));
         res.json(deleteMusic);
+        return;
     }
 
 }
