@@ -1,7 +1,5 @@
-let users = [
-  { username: 'Isaac', password: '123456' },
-  { username: 'John Doe', password: '654321' }
-]
+const users = require("../models/users")
+
 
 module.exports = {
   // GET /
