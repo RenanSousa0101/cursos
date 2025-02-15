@@ -38,7 +38,7 @@ module.exports = {
         }
 
         loans.push(newLoan)
-        booksModel.updateBook(book.id, { quantityAvailable: book.quantityAvailable - 1 })
+        booksModel.takeBook(book.id)
 
         return newLoan
     },
@@ -53,9 +53,11 @@ module.exports = {
         loan.isReturned = true
 
         const today = new Date()
+        const limitDate = new Date(loan.returnDate)
+        loan.isLate = today > limitDate
         loan.returnDate = today
-
-        const limitDate = new Date()
         
+        booksModel.returnBook(loan.bookId)
+        return loan
     }
 }
