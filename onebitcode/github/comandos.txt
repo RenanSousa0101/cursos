@@ -14,6 +14,8 @@ git diff: mostra as alterações entre diferentes commits, entre um commit e a w
 
 git restore: reverte as alterações em um arquivo, voltando ele para como estava no último commit.
 
+git reset --mixed HEAD~1  desfaz o commit
+
 git branch: cria uma nova branch no repositório.
 
 git checkout nome-da-branch: muda para uma branch diferente.
