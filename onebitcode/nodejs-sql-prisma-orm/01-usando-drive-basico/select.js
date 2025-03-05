@@ -1,6 +1,6 @@
 const pg = require("pg");
 
-const connectionString = "postgresql://renansousa-linux:renan260601gx@localhost:5432/node_postgres";
+const connectionString = "postgresql://renansousa-linux:renan1234567@localhost:5432/node_postgres";
 const db = new pg.Client({ connectionString });
 
 async function selectPokemon() {

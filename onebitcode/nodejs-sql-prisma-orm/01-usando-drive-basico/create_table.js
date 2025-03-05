@@ -11,7 +11,7 @@ const pg = require("pg");
 // Outra forma de se conectar ao banco
 const db = new pg.Client({
     // Connection String: protocolo://usuario:senha@host:porta/nome_do_banco
-    connectionString: "postgresql://renansousa-linux:renan260601gx@localhost:5432/node_postgres"
+    connectionString: "postgresql://renansousa-linux:renan1234567@localhost:5432/node_postgres"
 });
 
 async function createTable() {

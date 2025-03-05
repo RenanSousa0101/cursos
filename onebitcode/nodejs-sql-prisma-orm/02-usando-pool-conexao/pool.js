@@ -1,7 +1,7 @@
 const { Pool } = require("pg");
 
 const pool = new Pool({
-  connectionString: "postgresql://renansousa-linux:renan260601gx@localhost:5432/node_postgres",
+  connectionString: "postgresql://renansousa-linux:renan1234567@localhost:5432/node_postgres",
   max: 2,
 });
 
