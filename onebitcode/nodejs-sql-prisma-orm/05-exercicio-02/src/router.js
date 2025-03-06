@@ -1,13 +1,12 @@
 const { Router } = require("express");
-const customerControler = require("./controllers/customers-controller")
+const customersController = require("./controllers/customers-controller")
 
 const router = Router();
 
-router.get("/customers", customerControler.index)
-router.post("/customers", customerControler.create)
-router.get("/customers/:id", customerControler.show)
-router.put("/customers/:id", customerControler.update)
-router.delete("/customers/:id", customerControler.delete)
-
+router.get("/customers", customersController.index);
+router.get("/customers/:id", customersController.show);
+router.post("/customers", customersController.save);
+router.put("/customers/:id", customersController.update);
+router.delete("/customers/:id", customersController.delete);
 
 module.exports = router;
