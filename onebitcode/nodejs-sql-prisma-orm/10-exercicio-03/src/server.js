@@ -1,9 +1,12 @@
-const express = require("express")
-const usersRouter = require("./routes/users")
+const express = require("express");
+const userRouter = require("./routes/users");
+const postRouter = require("./routes/posts");
 
-const app = express()
+const app = express();
 
-app.use(express.json())
-app.use("/api/users", usersRouter)
+app.use(express.json());
 
-app.listen(3000, () => console.log(`Servidor inciado!`))
+app.use("/api/users", userRouter);
+app.use("/api/posts", postRouter);
+
+app.listen(5000, console.log("Server running on http://localhost:5000/"));
