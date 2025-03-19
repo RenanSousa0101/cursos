@@ -29,7 +29,7 @@ model Lead {
   groups Group[] @relation("GroupLeads")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  Campaigns LeadCampaing[]
+  campaigns LeadCampaing[]
 }
 
 enum LeadStatus {
@@ -48,7 +48,7 @@ model Campaign {
   description String 
   startDate DateTime
   endDate DateTime?
-  Leads LeadCampaing[]
+  leads LeadCampaing[]
 }
 
 model LeadCampaing {
