@@ -18,12 +18,15 @@ router.delete("/leads/:id", leadsController.delete)
 
 router.get("/groups", groupsController.index)
 router.post("/groups", groupsController.create)
-router.get("groups/:id", groupsController.show)
+router.get("groups/:id", groupsController.show )
 router.put("groups/:id", groupsController.update)
 router.delete("groups/:id", groupsController.delete)
 
 router.get("/campaigns", campaignsController.index)
 router.post("/campaigns", campaignsController.create)
+router.get("campaigns/:id", campaignsController.show)
+router.put("campaigns/:id", campaignsController.update)
+router.delete("campaigns/:id", campaignsController.delete)
 
 router.get("/status", async (req, res, next) => {
     try {
