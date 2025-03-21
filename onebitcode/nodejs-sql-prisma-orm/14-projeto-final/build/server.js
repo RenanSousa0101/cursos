@@ -9,6 +9,7 @@ const router_1 = require("./router");
 const error_handler_1 = require("./middlewares/error-handler");
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
+app.use(express_1.default.json());
 app.use("/api", router_1.router);
 app.use(error_handler_1.errorHandlerMiddleware);
 const PORT = process.env.PORT || 3000;
