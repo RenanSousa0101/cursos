@@ -23,7 +23,7 @@ export interface ICreateLeadAttributes {
     name: string
     email: string
     phone: string
-    status: LeadStatus
+    status?: LeadStatus
 }
 
 export interface ILeadsRepository {
