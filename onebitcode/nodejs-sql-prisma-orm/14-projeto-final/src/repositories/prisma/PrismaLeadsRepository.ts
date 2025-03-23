@@ -46,12 +46,15 @@ export class PrismaLeadsRepository implements ILeadsRepository {
         return prisma.lead.create({ data: attributes })
     }
 
-    async updatedById(id: number, attributes: Partial<ICreateLeadAttributes>): Promise<Lead | null> {
-
+    async updatedById(id: number, attributes: Partial<ICreateLeadAttributes>): Promise<Lead> {
+        return prisma.lead.update({
+            where: { id },
+            data: attributes
+        })
     }
 
-    async deleteById: (id: number): Promise<Lead | null> {
-
+    async deleteById(id: number): Promise<Lead> {
+        return prisma.lead.delete({ where: { id }})
     }
 
 }
