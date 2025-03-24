@@ -3,8 +3,18 @@ import { GetLeadsRequestSchema } from "./schemas/LeadsRequestSchemas";
 import { Prisma } from "@prisma/client";
 import { prisma } from "../database";
 import { AddLeadRequestSchema } from "./schemas/GroupsRequestSchema";
+import { GroupsRepository } from "../repositories/GroupsRepository";
+import { ILeadsRepository } from "../repositories/LeadsRepository";
 
 export class GroupLeadsController {
+
+    constructor(
+        private readonly groupsRepository: GroupsRepository,
+        private readonly leadsRepository: ILeadsRepository
+    ) {
+
+    }
+
     getLeads: Handler = async (req, res, next) => {
         try {
             
@@ -52,20 +62,9 @@ export class GroupLeadsController {
 
     addLead: Handler = async (req, res, next) => {
         try {
-            const body = AddLeadRequestSchema.parse(req.body)
-            const updatedGroup = await prisma.group.update({
-                where: {
-                    id: Number(req.params.groupId)
-                },
-                data: {
-                    leads: {
-                        connect: { id: body.leadId}
-                    }
-                },
-                include: {
-                    leads: true 
-                }
-            })
+            const groupId = Number(req.params.groupId)
+            const { leadId } = AddLeadRequestSchema.parse(req.body)
+            const updatedGroup = await this.groupsRepository.addLead(groupId, leadId)
             res.status(201).json(updatedGroup)
         } catch (error) {
             next(error)
@@ -74,15 +73,9 @@ export class GroupLeadsController {
 
     removeLead: Handler = async (req, res, next) => {
         try {
-            const updatedGroup = await prisma.group.update({
-                where: { id: Number(req.params.groupId) },
-                data: {
-                    leads: {
-                        disconnect: { id: Number(req.params.leadId) }
-                    } 
-                },
-                include: { leads: true }
-            })
+            const groupId = Number(req.params.groupId)
+            const leadId = Number(req.params.leadId)
+            const updatedGroup = await this.groupsRepository.removeLead(groupId, leadId)
             res.json(updatedGroup)
         } catch (error) {
             next(error)
