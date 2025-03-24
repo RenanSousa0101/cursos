@@ -4,7 +4,7 @@ import { Prisma } from "@prisma/client";
 import { prisma } from "../database";
 import { AddLeadRequestSchema } from "./schemas/GroupsRequestSchema";
 import { GroupsRepository } from "../repositories/GroupsRepository";
-import { ILeadsRepository } from "../repositories/LeadsRepository";
+import { ILeadsRepository, ILeadWhereParams } from "../repositories/LeadsRepository";
 
 export class GroupLeadsController {
 
@@ -22,36 +22,26 @@ export class GroupLeadsController {
             const query = GetLeadsRequestSchema.parse(req.query)
             const { page = "1", pageSize = "10",  name, status, sortBy = "name", order = "asc" } = query
 
-            const pageNumber = Number(page)
-            const pageSizeNumber = Number(pageSize)
+            const limit = Number(pageSize)
+            const offset = (Number(page) - 1) * limit
 
-            const where: Prisma.LeadWhereInput = {
-                groups: {
-                    some: { id: groupId }
-                }
+            const where: ILeadWhereParams = {
+                groupId
             }
 
-            if (name) where.name = { contains: name, mode: "insensitive" }
+            if (name) where.name = { like: name, mode: "insensitive" }
             if (status) where.status = status
 
-            const leads = await prisma.lead.findMany({
-                where,
-                orderBy: { [sortBy]: order },
-                skip: (pageNumber - 1) * pageSizeNumber,
-                take: pageSizeNumber,
-                include: {
-                    groups: true
-                }
-            })
-            const total = await prisma.lead.count({ where })
+            const leads = await this.leadsRepository.find({ where, sortBy, order, limit, offset})
+            const total = await this.leadsRepository.count({ where })
 
             res.json({
                 leads,
                 meta: {
-                    page: pageNumber,
-                    pageSize: pageSizeNumber,
+                    page: Number(page),
+                    pageSize: limit,
                     total,
-                    totalPages: Math.ceil(total / pageSizeNumber)
+                    totalPages: Math.ceil(total / limit)
                 }
             })
         } catch (error) {

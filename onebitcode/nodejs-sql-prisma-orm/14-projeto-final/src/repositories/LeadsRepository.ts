@@ -9,6 +9,7 @@ export interface ILeadWhereParams {
         mode?: "default" | "insensitive"
     }
     status?: LeadStatus
+    groupId?: number
 }
 
 export interface IFindLeadsParams {
