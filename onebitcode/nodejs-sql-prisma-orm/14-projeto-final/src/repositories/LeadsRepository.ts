@@ -18,6 +18,10 @@ export interface IFindLeadsParams {
     order?: "asc" | "desc"
     limit?: number
     offset?: number
+    include?: {
+        groups?: boolean
+        campaigns?: boolean
+    }
 }
 
 export interface ICreateLeadAttributes {

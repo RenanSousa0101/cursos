@@ -1,7 +1,5 @@
 import { Handler } from "express";
 import { GetLeadsRequestSchema } from "./schemas/LeadsRequestSchemas";
-import { Prisma } from "@prisma/client";
-import { prisma } from "../database";
 import { AddLeadRequestSchema } from "./schemas/GroupsRequestSchema";
 import { GroupsRepository } from "../repositories/GroupsRepository";
 import { ILeadsRepository, ILeadWhereParams } from "../repositories/LeadsRepository";
@@ -32,8 +30,15 @@ export class GroupLeadsController {
             if (name) where.name = { like: name, mode: "insensitive" }
             if (status) where.status = status
 
-            const leads = await this.leadsRepository.find({ where, sortBy, order, limit, offset})
-            const total = await this.leadsRepository.count({ where })
+            const leads = await this.leadsRepository.find({ 
+                where, 
+                sortBy, 
+                order, 
+                limit, 
+                offset, 
+                include: { groups: true }
+            })
+            const total = await this.leadsRepository.count(where)
 
             res.json({
                 leads,
