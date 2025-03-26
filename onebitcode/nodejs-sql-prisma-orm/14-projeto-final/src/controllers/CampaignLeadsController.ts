@@ -3,10 +3,14 @@ import { Prisma } from "@prisma/client";
 import { AddLeadRequestSchema, GetCampaignLeadsRequestSchema, UpdateLeadStatusRequestSchema } from "./schemas/CampaignsRequestSchema";
 import { prisma } from "../database";
 import { CampaignsRepository } from "../repositories/CampaignsRepository";
+import { ILeadsRepository, ILeadWhereParams } from "../repositories/LeadsRepository";
 
 export class CampaignLeadsController {
 
-    constructor(private readonly campaignsRepository: CampaignsRepository){}
+    constructor(
+        private readonly campaignsRepository: CampaignsRepository,
+        private readonly leadsRepository: ILeadsRepository
+    ){}
 
     getLeads: Handler = async (req, res, next) => {
         try {
@@ -14,42 +18,33 @@ export class CampaignLeadsController {
             const query = GetCampaignLeadsRequestSchema.parse(req.query)
             const { page = "1", pageSize = "10",  name, status, sortBy = "name", order = "asc" } = query
 
-            const pageNumber = Number(page)
-            const pageSizeNumber = Number(pageSize)
+            const limit = Number(pageSize)
+            const offset = (Number(page) - 1) * limit
 
-            const where: Prisma.LeadWhereInput = {
-                campaigns: {
-                    some: { campaignId }
-                }
+            const where: ILeadWhereParams = {
+                campaignId,
+                campaignStatus: status
             }
 
-            if (name) where.name = { contains: name, mode: "insensitive" }
-            if (status) where.campaigns = { some: { status } }
+            if (name) where.name = { like: name, mode: "insensitive" }
 
-            const leads = await prisma.lead.findMany({
+            const leads = await this.leadsRepository.find({
                 where,
-                orderBy: { [sortBy]: "asc" },
-                skip: (pageNumber - 1) * pageSizeNumber,
-                take: pageSizeNumber,
-                include: {
-                    campaigns: {
-                        select: {
-                            campaignId: true,
-                            leadId: true,
-                            status: true
-                        }
-                    }
-                }
+                sortBy,
+                order,
+                limit,
+                offset,
+                include: { campaigns: true}
             })
-            const total = await prisma.lead.count({ where })
+            const total = await this.leadsRepository.count(where)
 
             res.json({
                 leads,
                 meta: {
-                    page: pageNumber,
-                    pageSize: pageSizeNumber,
+                    page: Number(page),
+                    pageSize: limit,
                     total,
-                    totalPages: Math.ceil(total / pageSizeNumber)
+                    totalPages: Math.ceil(total / limit)
                 }
             })
             
