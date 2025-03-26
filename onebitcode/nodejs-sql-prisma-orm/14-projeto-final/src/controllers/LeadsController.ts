@@ -3,36 +3,23 @@ import { Handler } from "express";
 import { CreateLeadRequestSchema, GetLeadsRequestSchema, updateLeadRequestSchema } from "./schemas/LeadsRequestSchemas";
 import { HttpError } from "../errors/HttpError";
 // import { Prisma } from "@prisma/client";
-import { ILeadsRepository, ILeadWhereParams } from "../repositories/LeadsRepository";
+import { LeadsService } from "../services/LeadsService";
 
 export class LeadsController {
-    private leadsRepository: ILeadsRepository
-
-    constructor(leadsRepository: ILeadsRepository) {
-        this.leadsRepository = leadsRepository
-    }
+    
+    constructor(private readonly leadsService: LeadsService){}
 
     index: Handler = async (req, res, next) => {
         try {
             const query = GetLeadsRequestSchema.parse(req.query)
-            const { page = "1", pageSize = "10", name, status, sortBy = "name", order = "asc" } = query
+            const { page = "1", pageSize = "10"} = query
 
-            const limit = Number(page)
-            const offset = (Number(page) - 1) * limit
-
-            const where: ILeadWhereParams = {}
-
-            if(name) where.name = { like: name, mode: "insensitive" }
-            if(status) where.status = status
-
-            const leads = await this.leadsRepository.find({
-                where,
-                sortBy,
-                order,
-                limit,
-                offset
+            const result = this.leadsService.getAllLeadsPaginated({
+                ...query,
+                page: +page,
+                pageSize: +pageSize,
             })
-            const total = await this.leadsRepository.count(where)
+            
             // const leads = await prisma.lead.findMany({
             //     where,
             //     skip: (pageNumber - 1) * pageSizeNumber,
@@ -41,15 +28,7 @@ export class LeadsController {
             // })
             // const total = await prisma.lead.count({ where })
 
-            res.json({
-                data: leads,
-                meta: {
-                    page: Number(page),
-                    pageSize: limit,
-                    total,
-                    totalPages: Math.ceil(total / limit)
-                }
-            })
+            res.json(result)
         } catch (error) {
             next(error)
         }
@@ -58,11 +37,7 @@ export class LeadsController {
     create: Handler = async (req, res, next) => {
         try {
             const body = CreateLeadRequestSchema.parse(req.body)
-            if (!body.status) body.status = "New"
-            const newLead = await this.leadsRepository.create(body)
-            // const newLead = await prisma.lead.create({
-            //     data: body
-            // })
+            const newLead = await this.leadsService.createLead(body)
             res.status(201).json(newLead)
         } catch (error) {
             next(error)
