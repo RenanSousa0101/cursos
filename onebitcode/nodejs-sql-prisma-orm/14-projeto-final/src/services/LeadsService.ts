@@ -42,7 +42,7 @@ export class LeadsService {
                     page,
                     pageSize,
                     total,
-                    totalPages: Math.ceil(total / page)
+                    totalPages: Math.ceil(total / pageSize)
                 }
             }
     }
