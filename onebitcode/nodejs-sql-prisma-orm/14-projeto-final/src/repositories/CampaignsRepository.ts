@@ -1,6 +1,6 @@
 import { Campaign } from "@prisma/client";
 
-export type LeadCampaignStatus = "New" | "Engaged" | "FollowUp_Scheduled" | "Contacted" | 
+export type LeadCampaignStatus = "New" | "Engaged" | "Folloup_Scheduled" | "Contacted" | 
 "Qualified" | "Converted" | "Unresponsive" | "Disqualified" | "Re_Engaged" | "Opted_Out"
 
 export interface CreateCampaignAttributes {
@@ -22,4 +22,6 @@ export interface CampaignsRepository {
     updateById: (id: number, attributes: Partial<CreateCampaignAttributes>) => Promise<Campaign | null>
     deleteById: (id: number) => Promise<Campaign | null>
     addLead: (attributes: AddLeadToCampaignAttributes) => Promise<void>
+    updateLeadStatus: (attributes: AddLeadToCampaignAttributes) => Promise<void>
+    removeLead: (campaignId: number, leadId: number) => Promise<void>
 }
