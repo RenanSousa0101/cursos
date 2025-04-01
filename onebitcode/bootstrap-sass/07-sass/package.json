@@ -1,0 +1,18 @@
+{
+  "name": "07-sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass --watch ./scss/styles.scss:./styles/styles.css",
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "sass": "^1.86.1",
+    "vite": "^6.2.4"
+  }
+}
