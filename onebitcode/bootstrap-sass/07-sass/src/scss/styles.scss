@@ -1,16 +1,8 @@
-@use 'sass:color';
+@use 'variables' as *;
+@use 'buttons';
+@use 'forms';
+@use 'layouts';
 
-$color-dark: #232323;
-$color-light: #fafafa;
-$color-primary: #5f4fff;
-$color-secondary: #ff9f00;
-$color-success: #3eff7e;
-$color-danger: #ff3e3e;
-
-$spacing-xs: .5rem;
-$spacing-sm: 1rem;
-$spacing-md: 3rem;
-$spacing-lg: 5rem;
 
 body {
     background-color: $color-dark;
@@ -22,70 +14,7 @@ p {
     margin-top: .125rem;
 }
 
-section {
-    padding: $spacing-sm $spacing-sm;
-}
 
-.container {
-    padding: $spacing-sm $spacing-lg;
 
-    p {
-        margin-top: $spacing-sm;
-    }
-}
 
-label {
-    display: block;
-    margin-bottom: $spacing-xs;
-}
 
-input {
-    border: none;
-    border-radius: .25rem;
-    display: block;
-    font-size: 1rem;
-    padding: $spacing-xs;
-}
-
-.form-inline {
-    display: flex;
-    align-items: end;
-    justify-content: start;
-    gap: $spacing-sm;
-}
-
-@mixin background-with-hover($bg-color: $color-light, $text-color: $color-dark) {
-    background-color: $bg-color;
-    color: $text-color;
-
-    &:hover {
-        background-color: color.scale($bg-color, $lightness: -20%);
-    }
-}
-
-.btn {
-    @include background-with-hover;
-    border: none;
-    border-radius: .25rem;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    font-size: 1rem;
-    padding: $spacing-xs $spacing-xs*1.5;
-    transition: .15s;
-
-    &.btn-primary {
-        @include background-with-hover($color-primary, $color-light);
-    }
-
-    &.btn-secondary {
-        @include background-with-hover($color-secondary, $color-light);
-    }
-
-    &.btn-success {
-        @include background-with-hover($color-success, $color-dark);
-    }
-
-    &.btn-danger {
-        @include background-with-hover($color-danger, $color-light);
-    }
-}
