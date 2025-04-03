@@ -1,15 +1,13 @@
-function sum(a, b) {
-  return a + b
-}
+import StatusText from "./components/StatusText"
+import { Subtitle } from "./components/Subtitle"
+import Title from "./components/Title"
 
 export default function App() {
-  const tech = "JavaScript"
-  const status = true
   return (
     <div>
-      <h1>{tech} is awesome!</h1>
-      <h2> It´s easy, like 1 + 1 is {sum(1, 1)}</h2>
-      <h2>Current status: {status ? "ON" : "OFF"}</h2>
+      <Title /> {/*Usando o componente criado */}
+      <Subtitle />
+      <StatusText />
       <p>{false && "Text"}</p>
       <p>{true && "Text"}</p>
     </div>
