@@ -1,0 +1,7 @@
+.radix-themes {
+    --default-font-family: var(--font-roboto-condensed);
+}
+
+h1 {
+    font-family: var(--font-quicksand) !important;
+}
