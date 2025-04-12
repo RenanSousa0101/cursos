@@ -8,7 +8,7 @@ export async function createPlanetAction(formData: FormData) {
     const description = formData.get('description');
     const imageUrl = formData.get('imageUrl');
     if (typeof name !== 'string' || typeof description !== 'string' || typeof imageUrl !== 'string') {
-        return null;
+        return;
     }
     await Planet.createPlanet({ name, description, imageUrl });
     revalidatePath('/');
